@@ -61,10 +61,82 @@ margin: auto;
 width: 100%;
 height: auto;
 padding:10px;
-margin-top: 5px;
+
 }
 .pricesdiv{
+display:block;
+width: 50%;
+height: auto;
+margin:auto;
+}
 
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #b00000;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+.pricingplans{
+font-family: monospace;
+font-size: 25px;
+text-align: center;
+background-color: #adadad;
+padding: 15px;
 }
 </style>
 <head>
@@ -84,12 +156,51 @@ margin-top: 5px;
 </head>
 <body>
 
-<div id="prices" class="pricesdiv">
-
-</div>
-
 <div id="videodiv" class="videodiv">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S7SLep244ss" id="video"></iframe>
 </div>
+<div id="pricingplans" class="pricingplans">
+<h2>-Pricing Plans-</h2>
+</div>
+
+<div id="prices" class="pricesdiv">
+<div class="columns">
+  <ul class="price">
+    <li class="header">Basic</li>
+    <li class="grey">$ 9.99 / year</li>
+    <li>10GB Storage</li>
+    <li>10 Emails</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#ff0000">Pro</li>
+    <li class="grey">$ 24.99 / year</li>
+    <li>25GB Storage</li>
+    <li>25 Emails</li>
+    <li>25 Domains</li>
+    <li>2GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Premium</li>
+    <li class="grey">$ 49.99 / year</li>
+    <li>50GB Storage</li>
+    <li>50 Emails</li>
+    <li>50 Domains</li>
+    <li>5GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+</div>
+
+
 </body>
 </html>
