@@ -63,12 +63,6 @@ height: auto;
 padding:10px;
 
 }
-.pricesdiv{
-display:block;
-width: 50%;
-height: auto;
-margin:auto;
-}
 
 
 
@@ -81,9 +75,13 @@ margin:auto;
 }
 
 .columns {
-  float: left;
-  width: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   padding: 8px;
+  font-family:monospace;
+  
 }
 
 .price {
@@ -117,7 +115,7 @@ margin:auto;
 }
 
 .button {
-  background-color: #b00000;
+  background-color: black;
   border: none;
   color: white;
   padding: 10px 25px;
@@ -125,7 +123,9 @@ margin:auto;
   text-decoration: none;
   font-size: 18px;
 }
-
+.button:hover{
+ background-color:gray;
+}
 @media only screen and (max-width: 600px) {
   .columns {
     width: 100%;
@@ -137,6 +137,36 @@ font-size: 25px;
 text-align: center;
 background-color: #adadad;
 padding: 15px;
+}
+input[type=email]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.contactdiv{
+background-color: #b8b8b8;
+text-align: center;
+display: block;
+font-family: monospace;
+font-size: 25px;
+}
+input[type=submit] {
+  width: 50%;
+  background-color: #2e2e2e;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0f0f0f;
 }
 </style>
 <head>
@@ -163,8 +193,8 @@ padding: 15px;
 <h2>-Pricing Plans-</h2>
 </div>
 
-<div id="prices" class="pricesdiv">
-<div class="columns">
+
+<div class="columns" id="prices">
   <ul class="price">
     <li class="header">Basic</li>
     <li class="grey">$ 9.99 / year</li>
@@ -174,9 +204,9 @@ padding: 15px;
     <li>1GB Bandwidth</li>
     <li class="grey"><a href="#" class="button">Sign Up</a></li>
   </ul>
-</div>
 
-<div class="columns">
+
+
   <ul class="price">
     <li class="header" style="background-color:#ff0000">Pro</li>
     <li class="grey">$ 24.99 / year</li>
@@ -186,9 +216,9 @@ padding: 15px;
     <li>2GB Bandwidth</li>
     <li class="grey"><a href="#" class="button">Sign Up</a></li>
   </ul>
-</div>
 
-<div class="columns">
+
+
   <ul class="price">
     <li class="header">Premium</li>
     <li class="grey">$ 49.99 / year</li>
@@ -198,9 +228,15 @@ padding: 15px;
     <li>5GB Bandwidth</li>
     <li class="grey"><a href="#" class="button">Sign Up</a></li>
   </ul>
-</div>
+
 </div>
 
+<div id="contact" class="contactdiv">
+<form id="form">
+<label for="email" id="email">Enter your email to stay up to date with the most recent interventions.</label>
+    <input type="email" id="email" name="email_address" placeholder="user@domain.com" required>
+</form>
+</div>
 
 </body>
 </html>
